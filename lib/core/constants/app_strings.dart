@@ -6,12 +6,19 @@ class AppStrings {
 
   // URLs e Endpoints API
   static const String baseUrl = 'http://protheus.conasa.com:8890/rest';
+  static const String tokenEndpoint = '/api/oauth2/v1/token';
+  static const String branchesEndpoint = '/TSIBranches';
   static const String authEndpoint = '/auth';
-  static const String inventoryHeaderEndpoint = '/Z75';
-  static const String inventoryItemsEndpoint = '/Z76';
-  static const String productsEndpoint = '/cstProduto';
   static const String inventoryEndpoint = '/cstInventario';
   static const String companiesEndpoint = '/companies';
+
+  static const String inventoryHeaderEndpoint =
+      '/cstInventarioHeader'; // API Z75
+  static const String inventoryItemsEndpoint = '/cstInventarioItems'; // API Z76
+  static const String productsEndpoint = '/cstProduto'; // API SB1
+  static const String centersEndpoint = '/cstCentroCusto'; // API CTT
+  static const String locationsEndpoint = '/cstLocalizacao'; // API NNR
+  static const String stockEndpoint = '/cstEstoque'; // API SB2
 
   // Endpoints de sincronização
   static const String syncProductsEndpoint = '/SB1';
@@ -19,16 +26,43 @@ class AppStrings {
   static const String syncStockEndpoint = '/SB2';
   static const String syncCostCentersEndpoint = '/CTT';
 
-  // Textos de interface - Navegação
-  static const String home = 'Início';
-  static const String inventories = 'Inventários';
-  static const String counting = 'Contagem';
-  static const String sync = 'Sincronização';
-  static const String settings = 'Configurações';
-
-  // Textos de interface - Ações
+  // Textos de autenticação
+  static const String welcome = 'Bem-vindo ao';
+  static const String loginTitle = 'Fazer Login';
+  static const String loginSubtitle =
+      'Entre com suas credenciais para acessar o sistema';
   static const String login = 'Entrar';
   static const String logout = 'Sair';
+  static const String forgotPassword = 'Esqueci minha senha';
+  static const String serverConfig = 'Configurar Servidor';
+  static const String serverUrl = 'URL do Servidor';
+  static const String testConnection = 'Testar Conexão';
+  static const String connectionSuccess = 'Conexão estabelecida com sucesso!';
+  static const String connectionError = 'Erro ao conectar com o servidor';
+
+  // Seleção de empresa
+  static const String selectCompany = 'Selecionar Empresa';
+  static const String selectCompanyMessage = 'Selecionar Empresa';
+  static const String selectBranch = 'Selecionar Filial';
+  static const String company = 'Empresa';
+  static const String branch = 'Filial';
+
+  // Navegação
+  static const String inventories = 'Inventários';
+  static const String counting = 'Contagem';
+  static const String items = 'Itens';
+  static const String settings = 'Configurações';
+  static const String scanner = 'Scanner';
+  static const String camera = 'Câmera';
+  static const String gallery = 'Galeria';
+  static const String photos = 'Fotos';
+  static const String rememberMe = 'Lembre-me';
+
+  // Textos de interface - Navegação
+  static const String home = 'Início';
+  static const String sync = 'Sincronização';
+
+  // Textos de interface - Ações
   static const String save = 'Salvar';
   static const String cancel = 'Cancelar';
   static const String confirm = 'Confirmar';
@@ -56,8 +90,7 @@ class AppStrings {
   // Autenticação
   static const String username = 'Usuário';
   static const String password = 'Senha';
-  static const String company = 'Empresa';
-  static const String selectCompany = 'Selecionar Empresa';
+
   static const String loginError = 'Erro ao fazer login';
   static const String invalidCredentials = 'Credenciais inválidas';
   static const String sessionExpired = 'Sessão expirada';
@@ -85,6 +118,7 @@ class AppStrings {
   static const String quantity = 'Quantidade';
   static const String location = 'Localização';
   static const String notes = 'Observações';
+  static const String enterObservations = 'Inserir Observações';
   static const String capturePhoto = 'Capturar Foto';
   static const String countedQuantity = 'Quantidade Contada';
   static const String systemQuantity = 'Quantidade do Sistema';
@@ -129,10 +163,16 @@ class AppStrings {
 
   // Validações
   static const String fieldRequired = 'Campo obrigatório';
+  static const String codeRequired = 'Código obrigatório';
+  static const String tagRequired = 'TAG obrigatória de deve ser preenchida';
+  static const String quantityRequired = 'Código obrigatório';
+  static const String quantityPositive =
+      'Quantidade não pode ser menor que zero';
   static const String invalidEmail = 'E-mail inválido';
   static const String invalidCPF = 'CPF inválido';
   static const String invalidCNPJ = 'CNPJ inválido';
   static const String invalidProductCode = 'Código de produto inválido';
+  static const String itemAdded = 'Produto Adicionado';
   static const String invalidQuantity = 'Quantidade inválida';
   static const String invalidDate = 'Data inválida';
   static const String productNotFound = 'Produto não encontrado';
@@ -160,6 +200,7 @@ class AppStrings {
   static const String apiEndpointUnavailable = 'Endpoint da API indisponível';
   static const String initializationError = 'Erro na inicialização';
   static const String unknownError = 'Erro desconhecido';
+  static const String errorAddingItem = 'Erro ao adicionar o item';
 
   // Mensagens de sucesso
   static const String successSave = 'Salvo com sucesso';
@@ -174,7 +215,6 @@ class AppStrings {
   static const String countingTitle = 'Contagem';
   static const String syncTitle = 'Sincronização';
   static const String settingsTitle = 'Configurações';
-  static const String loginTitle = 'Login';
   static const String createInventoryTitle = 'Criar Inventário';
   static const String inventoryDetailsTitle = 'Detalhes do Inventário';
   static const String productDetailsTitle = 'Detalhes do Produto';
@@ -212,6 +252,7 @@ class AppStrings {
   static const String reviewItems = 'Revisar Itens';
   static const String exportData = 'Exportar Dados';
   static const String importData = 'Importar Dados';
+  static const String history = 'Histórico';
 
   // Status específicos
   static const String draft = 'Rascunho';
@@ -354,7 +395,7 @@ class AppStrings {
   // Etapas de contagem
   static const String productScan = 'Escanear Produto';
   static const String quantityInput = 'Inserir Quantidade';
-  static const String locationInput = 'Inserir Localização';
+  static const String locationInput = 'Inserir Local';
   static const String photoCapture = 'Capturar Foto';
   static const String confirmation = 'Confirmação';
 
@@ -444,4 +485,153 @@ class AppStrings {
   static const String backupError = 'Erro no backup';
   static const String restoreCompleted = 'Restauração concluída';
   static const String restoreError = 'Erro na restauração';
+
+  // Informações do aplicativo
+  static const String appVersion = '1.0.0';
+  static const String appDescription = 'Gestão de Inventário Empresarial';
+
+  // URLs e configurações
+  static const String defaultServerUrl = 'http://protheus.conasa.com:8890/rest';
+
+  // Lista de inventários
+  static const String inventoryList = 'Lista de Inventários';
+  static const String availableInventories = 'Inventários Disponíveis';
+  static const String noInventories = 'Nenhum inventário disponível';
+  static const String refreshList = 'Atualizar Lista';
+  static const String searchInventories = 'Buscar inventários...';
+  static const String filterByStatus = 'Filtrar por Status';
+  static const String allStatus = 'Todos os Status';
+
+  // Status de inventário
+  static const String statusOpen = 'Aberto';
+  static const String statusCounting = 'Contagem';
+  static const String statusClosed = 'Encerrado';
+  static const String statusReviewed = 'Revisado';
+  static const String statusApproved = 'Aprovado';
+  static const String statusTransferred = 'Transferido';
+  static const String statusExecuted = 'Executado';
+
+  // Detalhes do inventário
+  static const String inventoryCode = 'Código do Lote';
+  static const String creationDate = 'Data de Criação';
+  static const String currentStatus = 'Status Atual';
+  static const String countingProgress = 'Progresso da Contagem';
+  static const String continueCounting = 'Continuar Contagem';
+
+  // Processo de contagem
+  static const String productGroup = 'Grupo do Produto';
+  static const String unitOfMeasure = 'Unidade de Medida';
+  static const String tagControl = 'Controle TAG';
+  static const String tagDamaged = 'TAG Danificada';
+  static const String tagCode = 'Código da TAG';
+  static const String manualEntry = 'Entrada Manual';
+  static const String addToInventory = 'Adicionar ao Inventário';
+  static const String saveItem = 'Salvar Item';
+  static const String editItem = 'Editar Item';
+  static const String deleteItem = 'Excluir Item';
+
+  // Scanner
+  static const String scanBarcode = 'Escanear Código de Barras';
+  static const String scanQRCode = 'Escanear QR Code';
+  static const String scanTAG = 'Escanear TAG';
+  static const String holdSteady = 'Mantenha o código centralizado';
+  static const String scanSuccess = 'Código escaneado com sucesso!';
+  static const String scanError = 'Erro ao escanear código';
+  static const String enableCamera = 'Habilitar Câmera';
+
+  // Fotos
+  static const String takePhoto = 'Tirar Foto';
+  static const String selectPhoto = 'Selecionar Foto';
+  static const String photoRequired = 'Foto Obrigatória';
+  static const String photoOptional = 'Foto Opcional';
+  static const String addPhoto = 'Adicionar Foto';
+  static const String removePhoto = 'Remover Foto';
+  static const String viewPhoto = 'Visualizar Foto';
+  static const String photoSaved = 'Foto salva com sucesso';
+  static const String photoError = 'Erro ao processar foto';
+
+  // Lista de itens
+  static const String inventoriedItems = 'Itens Inventariados';
+  static const String searchItems = 'Buscar itens...';
+  static const String filterItems = 'Filtrar Itens';
+  static const String sortByCode = 'Código';
+  static const String sortByDescription = 'Descrição';
+  static const String sortByDate = 'Data';
+  static const String sortByQuantity = 'Quantidade';
+
+  // Sincronização
+  static const String syncData = 'Sincronizar Dados';
+  static const String syncPending = 'Pendente';
+  static const String syncSuccess = 'Sincronizado';
+  static const String downloadData = 'Baixar Dados';
+  static const String uploadData = 'Enviar Dados';
+  static const String syncFailed = 'Falha na sincronização';
+
+  // Configurações
+  static const String generalSettings = 'Configurações Gerais';
+  static const String userInfo = 'Informações do Usuário';
+  static const String serverSettings = 'Configurações do Servidor';
+  static const String appSettings = 'Configurações do App';
+  static const String clearCache = 'Limpar Cache';
+
+  // Mensagens de erro
+  static const String error = 'Erro';
+  static const String warning = 'Aviso';
+  static const String info = 'Informação';
+  static const String success = 'Sucesso';
+  static const String genericError = 'Ocorreu um erro inesperado';
+  static const String networkError = 'Erro de conexão com a internet';
+  static const String serverError = 'Erro no servidor';
+  static const String authError = 'Erro de autenticação';
+  static const String permissionDenied = 'Permissão negada';
+  static const String fileNotFound = 'Arquivo não encontrado';
+  static const String insufficientStorage = 'Espaço insuficiente';
+
+  // Ações
+  static const String add = 'Adicionar';
+  static const String remove = 'Remover';
+  static const String update = 'Atualizar';
+  static const String clear = 'Limpar';
+  static const String select = 'Selecionar';
+  static const String back = 'Voltar';
+  static const String close = 'Fechar';
+  static const String open = 'Abrir';
+  static const String view = 'Visualizar';
+  static const String send = 'Enviar';
+
+  // Confirmações
+  static const String confirmAction = 'Confirmar Ação';
+  static const String deleteItemConfirm = 'Deseja realmente excluir este item?';
+  static const String logoutConfirm = 'Deseja realmente sair do aplicativo?';
+  static const String discardChanges = 'Descartar alterações?';
+  static const String unsavedChanges = 'Há alterações não salvas';
+
+  // Status de conectividade
+  static const String online = 'Online';
+  static const String offline = 'Offline';
+  static const String connecting = 'Conectando...';
+  static const String connected = 'Conectado';
+  static const String disconnected = 'Desconectado';
+  static const String noInternet = 'Sem conexão com a internet';
+  static const String checkConnection = 'Verifique sua conexão';
+
+  // Datas relativas
+  static const String today = 'Hoje';
+  static const String yesterday = 'Ontem';
+  static const String thisWeek = 'Esta semana';
+  static const String lastWeek = 'Semana passada';
+  static const String thisMonth = 'Este mês';
+  static const String lastMonth = 'Mês passado';
+
+  // Unidades
+  static const String unit = 'UN';
+  static const String kilogram = 'KG';
+  static const String meter = 'M';
+  static const String liter = 'L';
+  static const String piece = 'PC';
+
+  // Padrões de nomenclatura de fotos
+  static const String photoPrefix = 'INV';
+  static const String photoSeparator = '_';
+  static const String photoExtension = '.jpg';
 }

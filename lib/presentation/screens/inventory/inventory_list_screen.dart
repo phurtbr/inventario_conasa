@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_strings.dart';
-import '../../core/constants/app_routes.dart';
-import '../../data/models/inventory_batch.dart';
-import '../../presentation/providers/inventory_provider.dart';
-import '../../presentation/providers/sync_provider.dart';
-import '../../presentation/widgets/common/loading_indicator.dart';
-import '../../presentation/widgets/common/error_widget.dart';
-import '../../presentation/widgets/inventory/inventory_card.dart';
-import '../../presentation/widgets/inventory/status_badge.dart';
+import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_strings.dart';
+import '../../../core/constants/app_routes.dart';
+import '../../../data/models/inventory_batch.dart';
+import '../../../presentation/providers/inventory_provider.dart';
+import '../../../presentation/providers/sync_provider.dart';
+import '../../../presentation/widgets/common/loading_indicator.dart';
+import '../../../presentation/widgets/common/error_widget.dart';
+import '../../../presentation/widgets/inventory/inventory_card.dart';
+import '../../../presentation/widgets/inventory/status_badge.dart';
 
 class InventoryListScreen extends StatefulWidget {
   const InventoryListScreen({Key? key}) : super(key: key);

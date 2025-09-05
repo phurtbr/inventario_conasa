@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_strings.dart';
-import '../../core/constants/app_routes.dart';
-import '../../core/utils/validators.dart';
-import '../../core/utils/formatters.dart';
-import '../../presentation/providers/auth_provider.dart';
-import '../../presentation/providers/connectivity_provider.dart';
-import '../../presentation/widgets/common/loading_indicator.dart';
-import '../../presentation/widgets/common/error_widget.dart';
+import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_strings.dart';
+import '../../../core/constants/app_routes.dart';
+import '../../../core/utils/validators.dart';
+import '../../../core/utils/formatters.dart';
+import '../../../presentation/providers/auth_provider.dart';
+import '../../../presentation/providers/connectivity_provider.dart';
+import '../../../presentation/widgets/common/loading_indicator.dart';
+import '../../../presentation/widgets/common/error_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -398,7 +398,7 @@ class _LoginScreenState extends State<LoginScreen>
               icon: const Icon(Icons.network_check),
               label: const Text(AppStrings.testConnection),
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.secondary,
+                backgroundColor: AppColors.conasecondary,
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

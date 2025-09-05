@@ -146,6 +146,7 @@ class SyncService {
         final productsData = data['produtos'] as List?;
 
         if (productsData != null) {
+          var Product;
           final products = productsData
               .map((item) => Product.fromJson(item))
               .toList();

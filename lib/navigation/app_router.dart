@@ -11,12 +11,10 @@ import '../presentation/screens/inventory/create_inventory_screen.dart';
 import '../presentation/screens/counting/counting_screen.dart';
 import '../presentation/screens/counting/scanner_screen.dart';
 import '../presentation/screens/counting/product_detail_screen.dart';
-import '../presentation/screens/items/item_list_screen.dart';
+import '../presentation/screens/inventory/inventory_list_screen.dart';
 import '../presentation/screens/items/item_detail_screen.dart';
-import '../presentation/screens/sync/sync_screen.dart';
+import '../presentation/screens/inventory/sync_screen.dart';
 import '../presentation/screens/settings/settings_screen.dart';
-import '../presentation/screens/settings/user_profile_screen.dart';
-import '../presentation/screens/settings/app_preferences_screen.dart';
 
 class AppRouter {
   static final GlobalKey<NavigatorState> navigatorKey =

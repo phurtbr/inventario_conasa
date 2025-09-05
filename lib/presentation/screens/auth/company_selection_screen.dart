@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_strings.dart';
-import '../../core/constants/app_routes.dart';
-import '../../data/models/user.dart';
-import '../../presentation/providers/auth_provider.dart';
-import '../../presentation/providers/connectivity_provider.dart';
-import '../../presentation/widgets/common/loading_indicator.dart';
-import '../../presentation/widgets/common/error_widget.dart';
+import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_strings.dart';
+import '../../../core/constants/app_routes.dart';
+import '../../../data/models/user.dart';
+import '../../../presentation/providers/auth_provider.dart';
+import '../../../presentation/providers/connectivity_provider.dart';
+import '../../../presentation/widgets/common/loading_indicator.dart';
+import '../../../presentation/widgets/common/error_widget.dart';
 
 class CompanySelectionScreen extends StatefulWidget {
   const CompanySelectionScreen({Key? key}) : super(key: key);

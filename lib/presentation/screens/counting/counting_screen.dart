@@ -142,15 +142,15 @@ class _CountingScreenState extends State<CountingScreen>
           itemBuilder: (context) => [
             const PopupMenuItem(
               value: 'mode',
-              child: Text(AppStrings.changeMode),
+              child: Text(AppStrings.resumeCounting),
             ),
             const PopupMenuItem(
               value: 'pause',
-              child: Text(AppStrings.pauseSession),
+              child: Text(AppStrings.pauseCounting),
             ),
             const PopupMenuItem(
               value: 'finish',
-              child: Text(AppStrings.finishSession),
+              child: Text(AppStrings.finishCounting),
             ),
           ],
         ),
@@ -202,8 +202,8 @@ class _CountingScreenState extends State<CountingScreen>
             TextFormField(
               controller: _locationController,
               decoration: InputDecoration(
-                labelText: AppStrings.storageLocation,
-                hintText: AppStrings.enterLocation,
+                labelText: AppStrings.inventoryLocation,
+                hintText: AppStrings.locationInput,
                 prefixIcon: const Icon(Icons.location_on),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -264,7 +264,7 @@ class _CountingScreenState extends State<CountingScreen>
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              AppStrings.observations,
+              AppStrings.notes,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -362,9 +362,9 @@ class _CountingScreenState extends State<CountingScreen>
       case CountingMode.scanner:
         return AppStrings.scanBarcode;
       case CountingMode.manual:
-        return AppStrings.enterProductCode;
+        return AppStrings.productCode;
       case CountingMode.search:
-        return AppStrings.searchProduct;
+        return AppStrings.scanProduct;
     }
   }
 
@@ -500,7 +500,7 @@ class _CountingScreenState extends State<CountingScreen>
     if (quantity == null || quantity <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(AppStrings.enterValidQuantity),
+          content: Text(AppStrings.invalidQuantity),
           backgroundColor: AppColors.warning,
           behavior: SnackBarBehavior.floating,
         ),
@@ -1001,7 +1001,7 @@ class _CountingScreenState extends State<CountingScreen>
       icon: const Icon(Icons.qr_code_scanner),
       label: const Text(AppStrings.openScanner),
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.secondary,
+        backgroundColor: AppColors.conasecondary,
         foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(vertical: 16),
         shape: RoundedRectangleBorder(

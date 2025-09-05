@@ -1,9 +1,9 @@
 import 'dart:io';
 import '../../core/constants/app_strings.dart';
-import '../models/inventory_batch.dart';
-import '../models/inventory_item.dart';
-import '../models/product.dart';
-import '../models/photo.dart';
+import '../models/inventory_batch.dart' hide SyncStatus;
+import '../models/inventory_item.dart' hide SyncStatus;
+import '../models/product.dart' hide SyncStatus;
+import '../models/photo.dart' hide SyncStatus;
 import '../services/api_service.dart';
 import '../services/database_service.dart';
 import '../services/photo_service.dart';

@@ -2,408 +2,344 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/app_colors.dart';
 
-/// Tema principal do aplicativo Inventário Conasa
-/// Baseado no Material Design com identidade visual da Conasa
-class AppTheme {
-  /// Tema claro principal
-  static ThemeData get lightTheme {
-    return ThemeData(
-      useMaterial3: true,
+/// Estilos de texto customizados para o aplicativo Inventário Conasa
+/// Complementa o tema principal com estilos específicos para diferentes contextos
+class TextStyles {
+  // Títulos de seções
+  static TextStyle get sectionTitle => GoogleFonts.inter(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textPrimary,
+    letterSpacing: 0.5,
+  );
 
-      // Esquema de cores baseado na identidade Conasa
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: AppColors.conaprimary,
-        brightness: Brightness.light,
-        primary: AppColors.conaprimary,
-        secondary: AppColors.conasecondary,
-        surface: AppColors.white,
-        background: AppColors.scaffoldBackground,
-        error: AppColors.error,
-        onPrimary: AppColors.white,
-        onSecondary: AppColors.white,
-        onSurface: AppColors.textPrimary,
-        onBackground: AppColors.textPrimary,
-        onError: AppColors.white,
-      ),
+  static TextStyle get sectionSubtitle => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textSecondary,
+  );
 
-      // Fonte padrão Inter
-      textTheme: GoogleFonts.interTextTheme().copyWith(
-        // Títulos grandes
-        headlineLarge: GoogleFonts.inter(
-          fontSize: 32,
-          fontWeight: FontWeight.w700,
-          color: AppColors.textPrimary,
-        ),
-        headlineMedium: GoogleFonts.inter(
-          fontSize: 28,
-          fontWeight: FontWeight.w600,
-          color: AppColors.textPrimary,
-        ),
-        headlineSmall: GoogleFonts.inter(
-          fontSize: 24,
-          fontWeight: FontWeight.w600,
-          color: AppColors.textPrimary,
-        ),
+  // Cards e listas
+  static TextStyle get cardTitle => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textPrimary,
+  );
 
-        // Títulos
-        titleLarge: GoogleFonts.inter(
-          fontSize: 22,
-          fontWeight: FontWeight.w600,
-          color: AppColors.textPrimary,
-        ),
-        titleMedium: GoogleFonts.inter(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-          color: AppColors.textPrimary,
-        ),
-        titleSmall: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-          color: AppColors.textPrimary,
-        ),
+  static TextStyle get cardSubtitle => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textSecondary,
+  );
 
-        // Body text
-        bodyLarge: GoogleFonts.inter(
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
-          color: AppColors.textPrimary,
-        ),
-        bodyMedium: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-          color: AppColors.textPrimary,
-        ),
-        bodySmall: GoogleFonts.inter(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          color: AppColors.textSecondary,
-        ),
+  static TextStyle get cardValue => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textPrimary,
+  );
 
-        // Labels
-        labelLarge: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-          color: AppColors.textPrimary,
-        ),
-        labelMedium: GoogleFonts.inter(
-          fontSize: 12,
-          fontWeight: FontWeight.w500,
-          color: AppColors.textPrimary,
-        ),
-        labelSmall: GoogleFonts.inter(
-          fontSize: 11,
-          fontWeight: FontWeight.w500,
-          color: AppColors.textSecondary,
-        ),
-      ),
+  static TextStyle get cardLabel => GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textSecondary,
+    letterSpacing: 0.5,
+  );
 
-      // AppBar Theme
-      appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.conaprimary,
-        foregroundColor: AppColors.white,
-        elevation: 0,
-        centerTitle: true,
-        titleTextStyle: GoogleFonts.inter(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-          color: AppColors.white,
-        ),
-        iconTheme: const IconThemeData(color: AppColors.white, size: 24),
-      ),
+  // Status badges
+  static TextStyle get statusBadge => GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 0.5,
+  );
 
-      // Card Theme
-      cardTheme: CardThemeData(
-        color: AppColors.cardBackground,
-        elevation: 2,
-        shadowColor: AppColors.shadowLight,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      ),
+  static TextStyle get statusBadgeSmall => GoogleFonts.inter(
+    fontSize: 10,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 0.5,
+  );
 
-      // Elevated Button Theme
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.conaprimary,
-          foregroundColor: AppColors.white,
-          elevation: 2,
-          shadowColor: AppColors.shadowLight,
-          minimumSize: const Size(double.infinity, 48),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          textStyle: GoogleFonts.inter(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-      ),
+  // Números e valores
+  static TextStyle get numberLarge => GoogleFonts.inter(
+    fontSize: 32,
+    fontWeight: FontWeight.w700,
+    color: AppColors.conaprimary,
+  );
 
-      // Outlined Button Theme
-      outlinedButtonTheme: OutlinedButtonThemeData(
-        style: OutlinedButton.styleFrom(
-          foregroundColor: AppColors.conaprimary,
-          side: const BorderSide(color: AppColors.conaprimary),
-          minimumSize: const Size(double.infinity, 48),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          textStyle: GoogleFonts.inter(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-      ),
+  static TextStyle get numberMedium => GoogleFonts.inter(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.conaprimary,
+  );
 
-      // Text Button Theme
-      textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          foregroundColor: AppColors.conaprimary,
-          minimumSize: const Size(64, 44),
-          textStyle: GoogleFonts.inter(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
+  static TextStyle get numberSmall => GoogleFonts.inter(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColors.conaprimary,
+  );
 
-      // Input Decoration Theme
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: AppColors.inputBackground,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AppColors.borderLight),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AppColors.borderLight),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AppColors.conaprimary, width: 2),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AppColors.error, width: 2),
-        ),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
-        ),
-        hintStyle: GoogleFonts.inter(color: AppColors.textHint, fontSize: 16),
-        labelStyle: GoogleFonts.inter(
-          color: AppColors.textSecondary,
-          fontSize: 16,
-        ),
-      ),
+  static TextStyle get currency => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.success,
+  );
 
-      // Bottom Navigation Bar Theme
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: AppColors.navBackground,
-        selectedItemColor: AppColors.navSelected,
-        unselectedItemColor: AppColors.navUnselected,
-        type: BottomNavigationBarType.fixed,
-        elevation: 8,
-        selectedLabelStyle: GoogleFonts.inter(
-          fontSize: 12,
-          fontWeight: FontWeight.w500,
-        ),
-        unselectedLabelStyle: GoogleFonts.inter(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
+  static TextStyle get quantity => GoogleFonts.inter(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textPrimary,
+    fontFeatures: [FontFeature.tabularFigures()],
+  );
 
-      // Floating Action Button Theme
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: AppColors.conaprimary,
-        foregroundColor: AppColors.white,
-        elevation: 6,
-        shape: CircleBorder(),
-      ),
+  // Códigos e identificadores
+  static TextStyle get productCode => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textPrimary,
+    letterSpacing: 1.0,
+  );
 
-      // Chip Theme
-      chipTheme: ChipThemeData(
-        backgroundColor: AppColors.lightGray,
-        selectedColor: AppColors.conaprimary,
-        secondarySelectedColor: AppColors.conasecondary,
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        labelStyle: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-        ),
-        secondaryLabelStyle: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-          color: AppColors.white,
-        ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      ),
+  static TextStyle get barcode => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textPrimary,
+    letterSpacing: 2.0,
+  );
 
-      // Dialog Theme
-      dialogTheme: DialogTheme(
-        backgroundColor: AppColors.white,
-        elevation: 8,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        titleTextStyle: GoogleFonts.inter(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-          color: AppColors.textPrimary,
-        ),
-        contentTextStyle: GoogleFonts.inter(
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
-          color: AppColors.textPrimary,
-        ),
-      ),
+  static TextStyle get tagCode => GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.conasecondary,
+    letterSpacing: 1.0,
+  );
 
-      // SnackBar Theme
-      snackBarTheme: SnackBarThemeData(
-        backgroundColor: AppColors.charcoal,
-        contentTextStyle: GoogleFonts.inter(
-          color: AppColors.white,
-          fontSize: 14,
-        ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        behavior: SnackBarBehavior.floating,
-      ),
+  // Formulários
+  static TextStyle get formLabel => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textPrimary,
+  );
 
-      // Progress Indicator Theme
-      progressIndicatorTheme: const ProgressIndicatorThemeData(
-        color: AppColors.conaprimary,
-        linearTrackColor: AppColors.lightGray,
-        circularTrackColor: AppColors.lightGray,
-      ),
+  static TextStyle get formValue => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textPrimary,
+  );
 
-      // Switch Theme
-      switchTheme: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
-            return AppColors.conaprimary;
-          }
-          return AppColors.mediumGray;
-        }),
-        trackColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
-            return AppColors.conaprimary.withOpacity(0.5);
-          }
-          return AppColors.lightGray;
-        }),
-      ),
+  static TextStyle get formHint => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textHint,
+  );
 
-      // CheckBox Theme
-      checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
-            return AppColors.conaprimary;
-          }
-          return AppColors.white;
-        }),
-        checkColor: MaterialStateProperty.all(AppColors.white),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-      ),
+  static TextStyle get formError => GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.error,
+  );
 
-      // Radio Theme
-      radioTheme: RadioThemeData(
-        fillColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
-            return AppColors.conaprimary;
-          }
-          return AppColors.mediumGray;
-        }),
-      ),
+  // Botões
+  static TextStyle get buttonPrimary => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+    letterSpacing: 0.5,
+  );
 
-      // Slider Theme
-      sliderTheme: SliderThemeData(
-        activeTrackColor: AppColors.conaprimary,
-        inactiveTrackColor: AppColors.lightGray,
-        thumbColor: AppColors.conaprimary,
-        overlayColor: AppColors.conaprimary.withOpacity(0.2),
-        valueIndicatorColor: AppColors.conaprimary,
-        valueIndicatorTextStyle: GoogleFonts.inter(
-          color: AppColors.white,
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+  static TextStyle get buttonSecondary => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.conaprimary,
+    letterSpacing: 0.5,
+  );
 
-      // Tab Bar Theme
-      tabBarTheme: TabBarTheme(
-        labelColor: AppColors.conaprimary,
-        unselectedLabelColor: AppColors.textSecondary,
-        indicator: const UnderlineTabIndicator(
-          borderSide: BorderSide(color: AppColors.conaprimary, width: 2),
-        ),
-        labelStyle: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w600,
-        ),
-        unselectedLabelStyle: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
+  static TextStyle get buttonText => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.conaprimary,
+  );
 
-      // Divider Theme
-      dividerTheme: const DividerThemeData(
-        color: AppColors.borderLight,
-        thickness: 1,
-        space: 1,
-      ),
+  static TextStyle get buttonSmall => GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.5,
+  );
 
-      // List Tile Theme
-      listTileTheme: ListTileThemeData(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        titleTextStyle: GoogleFonts.inter(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-          color: AppColors.textPrimary,
-        ),
-        subtitleTextStyle: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-          color: AppColors.textSecondary,
-        ),
-        iconColor: AppColors.textSecondary,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      ),
-    );
+  // Navegação
+  static TextStyle get navLabel =>
+      GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w500);
+
+  static TextStyle get tabLabel => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 0.5,
+  );
+
+  static TextStyle get appBarTitle => GoogleFonts.inter(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
+
+  // Listas e itens
+  static TextStyle get listTitle => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textPrimary,
+  );
+
+  static TextStyle get listSubtitle => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textSecondary,
+  );
+
+  static TextStyle get listTrailing => GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textSecondary,
+  );
+
+  // Datas e timestamps
+  static TextStyle get dateTime => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textSecondary,
+  );
+
+  static TextStyle get dateTimeSmall => GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textSecondary,
+  );
+
+  static TextStyle get dateTimeLarge => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textPrimary,
+  );
+
+  // Estados e mensagens
+  static TextStyle get errorMessage => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.error,
+  );
+
+  static TextStyle get successMessage => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.success,
+  );
+
+  static TextStyle get warningMessage => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.warning,
+  );
+
+  static TextStyle get infoMessage => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.info,
+  );
+
+  static TextStyle get emptyState => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textSecondary,
+  );
+
+  static TextStyle get loadingText => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textSecondary,
+  );
+
+  // Scanner e câmera
+  static TextStyle get scannerInstructions => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.white,
+    shadows: [
+      Shadow(color: AppColors.charcoal, blurRadius: 4, offset: Offset(1, 1)),
+    ],
+  );
+
+  static TextStyle get scannerResult => GoogleFonts.inter(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColors.success,
+  );
+
+  // Dialogs e alertas
+  static TextStyle get dialogTitle => GoogleFonts.inter(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textPrimary,
+  );
+
+  static TextStyle get dialogContent => GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textPrimary,
+    height: 1.5,
+  );
+
+  static TextStyle get dialogAction => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColors.conaprimary,
+    letterSpacing: 0.5,
+  );
+
+  // SnackBars e Toasts
+  static TextStyle get snackbarContent => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+  );
+
+  static TextStyle get snackbarAction => GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColors.conasecondary,
+    letterSpacing: 0.5,
+  );
+
+  // Métodos utilitários para criar variações
+  static TextStyle withColor(TextStyle style, Color color) {
+    return style.copyWith(color: color);
   }
 
-  /// Tema escuro (para futuras implementações)
-  static ThemeData get darkTheme {
-    return lightTheme.copyWith(
-      brightness: Brightness.dark,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: AppColors.conaprimary,
-        brightness: Brightness.dark,
-      ),
-    );
+  static TextStyle withSize(TextStyle style, double fontSize) {
+    return style.copyWith(fontSize: fontSize);
   }
 
-  /// Dimensões padronizadas
-  static const double borderRadius = 8.0;
-  static const double cardBorderRadius = 12.0;
-  static const double buttonBorderRadius = 8.0;
-  static const double dialogBorderRadius = 16.0;
+  static TextStyle withWeight(TextStyle style, FontWeight fontWeight) {
+    return style.copyWith(fontWeight: fontWeight);
+  }
 
-  /// Espaçamentos padronizados
-  static const double paddingSmall = 8.0;
-  static const double paddingMedium = 16.0;
-  static const double paddingLarge = 24.0;
-  static const double paddingXLarge = 32.0;
+  static TextStyle withOpacity(TextStyle style, double opacity) {
+    return style.copyWith(color: style.color?.withOpacity(opacity));
+  }
 
-  /// Elevações padronizadas
-  static const double elevationNone = 0.0;
-  static const double elevationLow = 2.0;
-  static const double elevationMedium = 4.0;
-  static const double elevationHigh = 8.0;
+  // Estilos para diferentes status
+  static TextStyle statusText(String status) {
+    final color = AppColors.getStatusColor(status);
+    return statusBadge.copyWith(color: color);
+  }
 
-  /// Tamanhos de ícones
-  static const double iconSmall = 16.0;
-  static const double iconMedium = 24.0;
-  static const double iconLarge = 32.0;
-  static const double iconXLarge = 48.0;
+  static TextStyle syncStatusText(String status) {
+    final color = AppColors.getSyncStatusColor(status);
+    return statusBadge.copyWith(color: color);
+  }
 
-  /// Alturas de componentes
-  static const double buttonHeight = 48.0;
-  static const double inputHeight = 48.0;
-  static const double appBarHeight = 56.0;
-  static const double bottomNavHeight = 60.0;
+  // Estilos responsivos (para tablets)
+  static TextStyle responsive(TextStyle style, BuildContext context) {
+    final isTablet = MediaQuery.of(context).size.width > 600;
+    if (isTablet) {
+      return style.copyWith(fontSize: (style.fontSize ?? 14) * 1.2);
+    }
+    return style;
+  }
 }

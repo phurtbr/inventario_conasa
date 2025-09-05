@@ -7,7 +7,7 @@ import '../presentation/providers/sync_provider.dart';
 import '../presentation/screens/home/home_screen.dart';
 import '../presentation/screens/inventory/inventory_list_screen.dart';
 import '../presentation/screens/counting/counting_screen.dart';
-import '../presentation/screens/sync/sync_screen.dart';
+import '../presentation/screens/inventory/sync_screen.dart';
 import '../presentation/screens/settings/settings_screen.dart';
 
 enum NavigationTab { home, inventories, counting, sync, settings }
@@ -48,7 +48,7 @@ class _MainNavigationState extends State<MainNavigation>
       icon: Icons.inventory_2_outlined,
       selectedIcon: Icons.inventory_2,
       label: AppStrings.inventories,
-      color: AppColors.secondary,
+      color: AppColors.conasecondary,
     ),
     NavigationTabConfig(
       tab: NavigationTab.counting,
